@@ -1,11 +1,20 @@
 package leetcode;
+import java.util.HashMap;
 
 public class Problem1 {
-	public int[] twoSums(int[] nums, int target){
-		int[] solution = new int[2];
-		
-		
-		
-		return solution;
+	public static int[] twoSum(int[] nums, int target){
+		HashMap<Integer, Integer> map = new HashMap<>();
+	    
+        for(int i=0; i < nums.length; i++)
+        {
+            if(map.containsKey(target - nums[i]))
+            {
+                return new int[] { map.get(target - nums[i]), i};
+            }
+
+            map.put(nums[i], i);
+        }
+        
+        return new int[] {-1, -1};
 	}
 }
